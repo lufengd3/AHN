@@ -23,13 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setClipsToBounds:YES];
-    [[self navigationController] setNavigationBarHidden:YES];
+//    [[self navigationController] setNavigationBarHidden:YES];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
     NSString *bundleUrl = [NSString stringWithFormat:@"file://%@/index.js",[NSBundle mainBundle].bundlePath];
-    self.url = [NSURL URLWithString:bundleUrl];
     
+    self.url = [NSURL URLWithString:bundleUrl];
+   
     [self render];
 }
 
@@ -42,7 +43,7 @@
     [_instance destroyInstance];
     _instance = [[WXSDKInstance alloc] init];
     _instance.viewController = self;
-    _instance.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    _instance.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 64);
     
     __weak typeof(self) weakSelf = self;
     _instance.onCreate = ^(UIView *view) {
@@ -57,34 +58,9 @@
         //process renderFinish
     };
     
-    NSURL *URL = [self checkURL: [self.url absoluteString]];
+    NSURL *URL = [NSURL URLWithString: [self.url absoluteString]];
     NSString *randomURL = [NSString stringWithFormat:@"%@%@random=%d",URL.absoluteString,URL.query?@"&":@"?",arc4random()];
     [_instance renderWithURL:[NSURL URLWithString:randomURL] options:@{@"bundleUrl":URL.absoluteString} data:nil];
 }
-
-- (NSURL*)checkURL:(NSString*)url
-{
-    NSRange range = [url rangeOfString:@"_wx_tpl"];
-    if (range.location != NSNotFound) {
-        NSString *tmp = [url substringFromIndex:range.location];
-        NSUInteger start = [tmp rangeOfString:@"="].location;
-        NSUInteger end = [tmp rangeOfString:@"&"].location;
-        ++start;
-        if (end == NSNotFound) {
-            end = [tmp length] - start;
-        }
-        else {
-            end = end - start;
-        }
-        NSRange subRange;
-        subRange.location = start;
-        subRange.length = end;
-        url = [tmp substringWithRange:subRange];
-    }
-    
-    return [NSURL URLWithString:url];
-}
-
-
 
 @end

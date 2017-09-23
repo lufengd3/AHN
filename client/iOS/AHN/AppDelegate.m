@@ -53,8 +53,8 @@
 
 #pragma mark weex
 - (void)initWeexSDK {
-    [WXAppConfiguration setAppGroup:@"LUF"];
-    [WXAppConfiguration setAppName:@"LFZY"];
+    [WXAppConfiguration setAppGroup:@"LuF"];
+    [WXAppConfiguration setAppName:@"AHN"];
     [WXAppConfiguration setAppVersion:@"1.0.0"];
     [WXSDKEngine initSDKEnvironment];
     

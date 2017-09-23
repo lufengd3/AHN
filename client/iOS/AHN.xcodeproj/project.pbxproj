@@ -15,7 +15,7 @@
 		897F9FF51F70314E00E2F755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 897F9FF41F70314E00E2F755 /* Assets.xcassets */; };
 		897F9FF81F70314E00E2F755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897F9FF61F70314E00E2F755 /* LaunchScreen.storyboard */; };
 		89E0A8AB1F7666680094F03B /* WXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E0A8AA1F7666680094F03B /* WXEventModule.m */; };
-		89E0A8AD1F7666C50094F03B /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 89E0A8AC1F7666C50094F03B /* index.js */; };
+		89FDA9081F76A04A00F545B4 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 89FDA9071F76A04A00F545B4 /* index.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		897F9FF91F70314E00E2F755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89E0A8A91F76663A0094F03B /* WXEventModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXEventModule.h; sourceTree = "<group>"; };
 		89E0A8AA1F7666680094F03B /* WXEventModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXEventModule.m; sourceTree = "<group>"; };
-		89E0A8AC1F7666C50094F03B /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		89FDA9071F76A04A00F545B4 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		CCFA815BB9225F2A1F7CF861 /* Pods-AHN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AHN/Pods-AHN.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,11 +69,11 @@
 		897F9FDC1F70314E00E2F755 = {
 			isa = PBXGroup;
 			children = (
-				89E0A8AC1F7666C50094F03B /* index.js */,
+				89FDA9041F76A02200F545B4 /* bundlejs */,
 				897F9FE71F70314E00E2F755 /* AHN */,
-				897F9FE61F70314E00E2F755 /* Products */,
-				3251CBCD3987BAE23B57DEAA /* Pods */,
 				0F358133543521F24FDCCDF5 /* Frameworks */,
+				3251CBCD3987BAE23B57DEAA /* Pods */,
+				897F9FE61F70314E00E2F755 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +109,14 @@
 				897F9FE91F70314E00E2F755 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89FDA9041F76A02200F545B4 /* bundlejs */ = {
+			isa = PBXGroup;
+			children = (
+				89FDA9071F76A04A00F545B4 /* index.js */,
+			);
+			name = bundlejs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +184,7 @@
 				897F9FF81F70314E00E2F755 /* LaunchScreen.storyboard in Resources */,
 				897F9FF51F70314E00E2F755 /* Assets.xcassets in Resources */,
 				897F9FF31F70314E00E2F755 /* Main.storyboard in Resources */,
-				89E0A8AD1F7666C50094F03B /* index.js in Resources */,
+				89FDA9081F76A04A00F545B4 /* index.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
