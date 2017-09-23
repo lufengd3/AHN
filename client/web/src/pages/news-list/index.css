@@ -1,0 +1,10 @@
+.container {
+  width: 750;
+  overflow: hidden;
+}
+
+.tips {
+  text-align: center;
+  padding: 20;
+  width: 750;
+}

@@ -1,0 +1,5 @@
+source 'git@github.com:CocoaPods/Specs.git'
+target 'AHN' do
+    platform :ios, '7.0'
+    pod 'WeexSDK', '~> 0.15.1'
+end

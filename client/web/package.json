@@ -8,10 +8,13 @@
     "lint": "eslint --ext .js --ext .jsx ./src"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "rax": "^0.4.13",
     "rax-icon": "^0.4.13",
     "rax-image": "^0.4.13",
-    "rax-link": "^0.4.13",
+    "rax-link": "^0.4.14",
+    "rax-recyclerview": "^0.4.14",
+    "rax-refreshcontrol": "^0.4.14",
     "rax-scrollview": "^0.4.13",
     "rax-tabbar": "^0.4.13",
     "rax-text": "^0.4.13",
