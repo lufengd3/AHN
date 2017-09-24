@@ -86,3 +86,5 @@ Pods/
 
 build/
 .DS_Store
+
+.Archive/

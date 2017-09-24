@@ -1,0 +1,32 @@
+.newsItem {
+  height: 220;
+  width: 750;
+  padding: 20;
+  border-bottom: 1 solid #cccccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.newsTitle {
+  width: 710;
+  height: 44;
+  background-color: #eeeeee;
+}
+
+.footer {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.score {
+  width: 120;
+  height: 36;
+  background-color: #eeeeee;
+}
+
+.time {
+  width: 230;
+  height: 36;
+  background-color: #eeeeee;
+}

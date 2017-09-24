@@ -6,7 +6,9 @@ import RefreshControl from 'rax-refreshcontrol';
 
 import HN from './hn-api';
 import NewsItem from './news-item';
+import Placeholder from './placeholder';
 import style from './index.css';
+import Storage from '../../utils/storage';
 
 const PAGE_SIZE = 10;
 const FETCH_OPTION = {
@@ -22,6 +24,8 @@ class NewsList extends Component {
 
     this.type = props.type;
 
+    this.firstScreen = true;
+
     this.state = {
       newsList: [],
       loading: true,
@@ -31,6 +35,10 @@ class NewsList extends Component {
     }
 
     this.idList = [];
+  }
+
+  compnentWillMount() {
+    // TODO: use storage in beststories
   }
 
   componentDidMount() {
@@ -76,9 +84,10 @@ class NewsList extends Component {
 
     Promise.all(fetchPromise)
     .then(data => {
+      this.firstScreen = false;
       this.setState(prevState => ({
         loading: false,
-        newsList: prevState.newsList.concat(data),
+        newsList: prevState.refreshing ? data : prevState.newsList.concat(data),
         pageNum: prevState.pageNum + 1,
         refreshing: false,
       }));
@@ -110,10 +119,8 @@ class NewsList extends Component {
 
   handleRefresh = () => {
     this.setState({
-      loading: true,
       refreshing: true,
       idList: [],
-      newsList: [],
     });
 
     this.fetchIDList();
@@ -121,6 +128,10 @@ class NewsList extends Component {
 
   render() {
     let {loading, error, newsList} = this.state;
+
+    if (this.firstScreen) {
+      return <Placeholder />;
+    }
 
     return (
       <RecyclerView onEndReached={this.loadMore} showVerticalScrollIndicator={false} showScrollbar={false}>

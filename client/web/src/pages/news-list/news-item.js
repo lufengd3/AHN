@@ -16,7 +16,7 @@ export default ({title, url, time, score}) => {
   time = moment(time * 1000).format('YYYY-MM-DD hh:mm');
 
   return (
-    <Link href={url} style={style.newsItem}>
+    <Link href={url} style={style.newsItem} target="_blank">
       <Text style={style.newsTitle} numberOfLines={2}>{title}</Text>
 
       <View style={style.footer}>
